@@ -684,6 +684,273 @@
             color: #999;
         }
 
+        /* Product Detail Modal */
+        .product-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 200;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .product-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .product-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            width: 90%;
+            max-width: 900px;
+            max-height: 90vh;
+            background: #fff;
+            border-radius: 8px;
+            z-index: 201;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .product-modal.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #fff;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            z-index: 10;
+            transition: background 0.2s;
+        }
+
+        .modal-close:hover {
+            background: #f1f3f6;
+        }
+
+        .modal-image-section {
+            width: 45%;
+            background: #f1f3f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            position: relative;
+        }
+
+        .modal-image-section img {
+            max-width: 100%;
+            max-height: 450px;
+            object-fit: contain;
+        }
+
+        .modal-details-section {
+            width: 55%;
+            padding: 30px;
+            overflow-y: auto;
+            max-height: 90vh;
+        }
+
+        .modal-product-name {
+            font-size: 20px;
+            font-weight: 500;
+            color: #212121;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .modal-product-rating {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .modal-rating-badge {
+            background: #26a541;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 4px 10px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .modal-rating-count {
+            font-size: 14px;
+            color: #878787;
+        }
+
+        .modal-price-section {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .modal-current-price {
+            font-size: 28px;
+            font-weight: 600;
+            color: #212121;
+        }
+
+        .modal-original-price {
+            font-size: 18px;
+            color: #878787;
+            text-decoration: line-through;
+            margin-left: 12px;
+        }
+
+        .modal-discount {
+            font-size: 16px;
+            color: #26a541;
+            font-weight: 500;
+            margin-left: 12px;
+        }
+
+        .modal-offers {
+            margin-top: 10px;
+        }
+
+        .modal-offer-item {
+            font-size: 13px;
+            color: #212121;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .modal-offer-item i {
+            color: #26a541;
+            font-size: 14px;
+        }
+
+        .modal-description {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .modal-description h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #212121;
+            margin-bottom: 10px;
+        }
+
+        .modal-description p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .modal-specifications {
+            margin-bottom: 20px;
+        }
+
+        .modal-specifications h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #212121;
+            margin-bottom: 12px;
+        }
+
+        .spec-table {
+            width: 100%;
+        }
+
+        .spec-row {
+            display: flex;
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f3f6;
+        }
+
+        .spec-label {
+            width: 40%;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .spec-value {
+            width: 60%;
+            font-size: 13px;
+            color: #212121;
+            font-weight: 500;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .modal-add-cart {
+            flex: 1;
+            background: #ff9f14;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #212121;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .modal-add-cart:hover {
+            background: #f5a800;
+        }
+
+        .modal-buy-now {
+            flex: 1;
+            background: #2874f0;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .modal-buy-now:hover {
+            background: #1d5dc9;
+        }
+
         /* Toast */
         .toast {
             position: fixed;
@@ -711,6 +978,10 @@
         .toast i {
             color: #26a541;
             font-size: 18px;
+        }
+
+        .toast.error i {
+            color: #d32f2f;
         }
 
         /* Responsive */
@@ -797,38 +1068,38 @@
 
     <!-- Banner -->
     <section class="banner">
-        <img src="https://picsum.photos/seed/flipkartbanner/1200/300?blur=1" alt="Banner" onerror="this.src='https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1200&h=300&fit=crop'">
+        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1200&h=300&fit=crop" alt="Banner">
     </section>
 
     <!-- Categories -->
     <section class="categories-section">
         <div class="categories-container">
-            <div class="category-card">
-                <div class="category-icon"><img src="https://picsum.photos/seed/cat1/64/64" alt="Electronics"></div>
+            <div class="category-card" onclick="filterByCategory('electronics')">
+                <div class="category-icon"><img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=64&h=64&fit=crop" alt="Electronics"></div>
                 <span class="category-name">Electronics</span>
             </div>
-            <div class="category-card">
-                <div class="category-icon"><img src="https://picsum.photos/seed/cat2/64/64" alt="Fashion"></div>
+            <div class="category-card" onclick="filterByCategory('fashion')">
+                <div class="category-icon"><img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=64&h=64&fit=crop" alt="Fashion"></div>
                 <span class="category-name">Fashion</span>
             </div>
-            <div class="category-card">
-                <div class="category-icon"><img src="https://picsum.photos/seed/cat3/64/64" alt="Home"></div>
+            <div class="category-card" onclick="filterByCategory('home')">
+                <div class="category-icon"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=64&h=64&fit=crop" alt="Home"></div>
                 <span class="category-name">Home</span>
             </div>
-            <div class="category-card">
-                <div class="category-icon"><img src="https://picsum.photos/seed/cat4/64/64" alt="Beauty"></div>
+            <div class="category-card" onclick="filterByCategory('beauty')">
+                <div class="category-icon"><img src="https://images.unsplash.com/photo-1596462502278-27bfdd403348?w=64&h=64&fit=crop" alt="Beauty"></div>
                 <span class="category-name">Beauty</span>
             </div>
-            <div class="category-card">
-                <div class="category-icon"><img src="https://picsum.photos/seed/cat5/64/64" alt="Sports"></div>
+            <div class="category-card" onclick="filterByCategory('sports')">
+                <div class="category-icon"><img src="https://images.unsplash.com/photo-1461896836934- voices8d3ad03?w=64&h=64&fit=crop" alt="Sports"></div>
                 <span class="category-name">Sports</span>
             </div>
-            <div class="category-card">
-                <div class="category-icon"><img src="https://picsum.photos/seed/cat6/64/64" alt="Books"></div>
+            <div class="category-card" onclick="filterByCategory('books')">
+                <div class="category-icon"><img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=64&h=64&fit=crop" alt="Books"></div>
                 <span class="category-name">Books</span>
             </div>
-            <div class="category-card">
-                <div class="category-icon"><img src="https://picsum.photos/seed/cat7/64/64" alt="Grocery"></div>
+            <div class="category-card" onclick="filterByCategory('grocery')">
+                <div class="category-icon"><img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=64&h=64&fit=crop" alt="Grocery"></div>
                 <span class="category-name">Grocery</span>
             </div>
         </div>
@@ -853,6 +1124,46 @@
         <div class="cart-footer">
             <div class="cart-summary" id="cartSummary"></div>
             <button class="checkout-btn" id="checkoutBtn" onclick="checkout()">PLACE ORDER</button>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div class="product-modal-overlay" id="productModalOverlay"></div>
+    <div class="product-modal" id="productModal">
+        <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+        <div class="modal-image-section">
+            <img src="" alt="" id="modalProductImage">
+        </div>
+        <div class="modal-details-section">
+            <div class="modal-product-name" id="modalProductName"></div>
+            <div class="modal-product-rating">
+                <span class="modal-rating-badge" id="modalRatingBadge">
+                    <i class="fas fa-star"></i> <span id="modalRating"></span>
+                </span>
+                <span class="modal-rating-count" id="modalReviews"></span>
+            </div>
+            <div class="modal-price-section">
+                <span class="modal-current-price" id="modalPrice"></span>
+                <span class="modal-original-price" id="modalOriginalPrice"></span>
+                <span class="modal-discount" id="modalDiscount"></span>
+                <div class="modal-offers" id="modalOffers"></div>
+            </div>
+            <div class="modal-description">
+                <h4>Description</h4>
+                <p id="modalDescription"></p>
+            </div>
+            <div class="modal-specifications" id="modalSpecifications">
+                <h4>Specifications</h4>
+                <div class="spec-table" id="specTable"></div>
+            </div>
+            <div class="modal-actions">
+                <button class="modal-add-cart" id="modalAddCart">
+                    <i class="fas fa-shopping-cart"></i> ADD TO CART
+                </button>
+                <button class="modal-buy-now" id="modalBuyNow">
+                    <i class="fas fa-bolt"></i> BUY NOW
+                </button>
+            </div>
         </div>
     </div>
 
@@ -897,16 +1208,168 @@
     </footer>
 
     <script>
-        // Demo Products
+        // Demo Products with accurate images and specifications
         const products = [
-            { id: 1, name: "boAt Rockerz 450 Bluetooth Headphone", price: 1299, originalPrice: 2990, rating: 4.2, reviews: 12456, discount: 57, image: "https://picsum.photos/seed/prod1/200/200" },
-            { id: 2, name: "Noise ColorFit Pro 4 Smartwatch", price: 3499, originalPrice: 7990, rating: 4.5, reviews: 8934, discount: 56, image: "https://picsum.photos/seed/prod2/200/200" },
-            { id: 3, name: "JBL Go 3 Portable Bluetooth Speaker", price: 999, originalPrice: 2499, rating: 4.1, reviews: 15678, discount: 60, image: "https://picsum.photos/seed/prod3/200/200" },
-            { id: 4, name: "Logitech K380 Wireless Keyboard", price: 2199, originalPrice: 3995, rating: 4.7, reviews: 5423, discount: 45, image: "https://picsum.photos/seed/prod4/200/200" },
-            { id: 5, name: "CP PLUS 2MP HD Security Camera", price: 1199, originalPrice: 2899, rating: 4.3, reviews: 3421, discount: 59, image: "https://picsum.photos/seed/prod5/200/200" },
-            { id: 6, name: "HP Wired USB Mouse M100", price: 299, originalPrice: 599, rating: 4.0, reviews: 25678, discount: 50, image: "https://picsum.photos/seed/prod6/200/200" },
-            { id: 7, name: "Amazon Basics USB-C Hub 7-in-1", price: 1499, originalPrice: 2999, rating: 4.4, reviews: 7845, discount: 50, image: "https://picsum.photos/seed/prod7/200/200" },
-            { id: 8, name: "Syska LED Desk Lamp Rechargeable", price: 899, originalPrice: 1999, rating: 4.2, reviews: 4567, discount: 55, image: "https://picsum.photos/seed/prod8/200/200" }
+            {
+                id: 1,
+                name: "boAt Rockerz 450 Bluetooth Headphone (Active Black)",
+                price: 1299,
+                originalPrice: 2990,
+                rating: 4.2,
+                reviews: 12456,
+                discount: 57,
+                image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop",
+                description: "Experience powerful bass and crystal clear sound with boAt Rockerz 450. Features 40mm drivers, 15 hours of playback, and lightweight design for comfortable extended use.",
+                specifications: {
+                    "Brand": "boAt",
+                    "Model": "Rockerz 450",
+                    "Color": "Active Black",
+                    "Connectivity": "Bluetooth 5.0",
+                    "Battery Life": "15 Hours",
+                    "Driver Size": "40mm",
+                    "Frequency": "20Hz-20kHz"
+                }
+            },
+            {
+                id: 2,
+                name: "Noise ColorFit Pro 4 Smartwatch (Midnight Black)",
+                price: 3499,
+                originalPrice: 7990,
+                rating: 4.5,
+                reviews: 8934,
+                discount: 56,
+                image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=300&fit=crop",
+                description: "Stay connected and fit with Noise ColorFit Pro 4. Features a 1.69 inch HD display, heart rate monitor, SpO2 tracking, and 10+ sports modes.",
+                specifications: {
+                    "Brand": "Noise",
+                    "Model": "ColorFit Pro 4",
+                    "Color": "Midnight Black",
+                    "Display": "1.69 inch HD",
+                    "Battery Life": "7 Days",
+                    "Water Resistance": "IP68",
+                    "Sensors": "Heart Rate, SpO2"
+                }
+            },
+            {
+                id: 3,
+                name: "JBL Go 3 Portable Bluetooth Speaker (Black)",
+                price: 999,
+                originalPrice: 2499,
+                rating: 4.1,
+                reviews: 15678,
+                discount: 60,
+                image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=300&h=300&fit=crop",
+                description: "Take your music anywhere with JBL Go 3. Compact, waterproof speaker with rich bass and 5 hours of playtime. Perfect for outdoor adventures.",
+                specifications: {
+                    "Brand": "JBL",
+                    "Model": "Go 3",
+                    "Color": "Black",
+                    "Connectivity": "Bluetooth 5.1",
+                    "Battery Life": "5 Hours",
+                    "Waterproof": "IP67",
+                    "Power Output": "4.2W"
+                }
+            },
+            {
+                id: 4,
+                name: "Logitech K380 Wireless Multi-Device Keyboard (Black)",
+                price: 2199,
+                originalPrice: 3995,
+                rating: 4.7,
+                reviews: 5423,
+                discount: 45,
+                image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=300&h=300&fit=crop",
+                description: "Work seamlessly across 3 devices with the Logitech K380. Slim, portable keyboard with long battery life and comfortable typing experience.",
+                specifications: {
+                    "Brand": "Logitech",
+                    "Model": "K380",
+                    "Color": "Black",
+                    "Connectivity": "Bluetooth + USB",
+                    "Battery Life": "24 Months",
+                    "Compatibility": "Windows, Mac, iOS, Android",
+                    "Layout": "Compact"
+                }
+            },
+            {
+                id: 5,
+                name: "CP PLUS 2MP HD CCTV Security Camera (White)",
+                price: 1199,
+                originalPrice: 2899,
+                rating: 4.3,
+                reviews: 3421,
+                discount: 59,
+                image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop",
+                description: "Keep your home secure with CP PLUS 2MP HD camera. Features night vision, motion detection, and remote viewing via mobile app.",
+                specifications: {
+                    "Brand": "CP PLUS",
+                    "Model": "CP-CAM-2MP",
+                    "Color": "White",
+                    "Resolution": "2MP Full HD",
+                    "Night Vision": "Yes (30m)",
+                    "Storage": "Cloud + SD Card",
+                    "Connectivity": "WiFi/Ethernet"
+                }
+            },
+            {
+                id: 6,
+                name: "HP M100 Wired Optical Mouse (Black)",
+                price: 299,
+                originalPrice: 599,
+                rating: 4.0,
+                reviews: 25678,
+                discount: 50,
+                image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=300&h=300&fit=crop",
+                description: "Reliable and comfortable HP M100 mouse with high-precision optical tracking. Ergonomic design suitable for both office and gaming.",
+                specifications: {
+                    "Brand": "HP",
+                    "Model": "M100",
+                    "Color": "Black",
+                    "Connectivity": "USB",
+                    "Sensor": "Optical",
+                    "Resolution": "1200 DPI",
+                    "Buttons": "3"
+                }
+            },
+            {
+                id: 7,
+                name: "Amazon Basics USB-C Hub 7-in-1 (Space Grey)",
+                price: 1499,
+                originalPrice: 2999,
+                rating: 4.4,
+                reviews: 7845,
+                discount: 50,
+                image: "https://images.unsplash.com/photo-1625723044792-44de16ccb4e9?w=300&h=300&fit=crop",
+                description: "Expand your laptop connectivity with Amazon Basics USB-C Hub. Features HDMI, USB 3.0 ports, SD card reader, and 100W power delivery.",
+                specifications: {
+                    "Brand": "Amazon Basics",
+                    "Model": "USB-C Hub 7-in-1",
+                    "Color": "Space Grey",
+                    "Ports": "HDMI, 3x USB 3.0, SD, TF, PD",
+                    "Power Delivery": "100W",
+                    "Data Transfer": "Up to 5Gbps",
+                    "Compatibility": "MacBook, USB-C Laptops"
+                }
+            },
+            {
+                id: 8,
+                name: "Syska LED Desk Lamp Rechargeable (White)",
+                price: 899,
+                originalPrice: 1999,
+                rating: 4.2,
+                reviews: 4567,
+                discount: 55,
+                image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=300&h=300&fit=crop",
+                description: "Modern LED desk lamp with touch controls, multiple brightness levels, and built-in rechargeable battery. Perfect for work, study, or bedside use.",
+                specifications: {
+                    "Brand": "Syska",
+                    "Model": "LED Desk Lamp",
+                    "Color": "White",
+                    "Power": "5W LED",
+                    "Battery": "Rechargeable Li-ion",
+                    "Modes": "3 Color Temperatures",
+                    "Features": "Touch Control, Dimmable"
+                }
+            }
         ];
 
         // Cart State
@@ -933,7 +1396,7 @@
         // Render products
         function renderProducts(filteredProducts = products) {
             productsGrid.innerHTML = filteredProducts.map(product => `
-                <div class="product-card">
+                <div class="product-card" onclick="openProductModal(${product.id})">
                     <img src="${product.image}" alt="${product.name}" class="product-image" onerror="this.src='https://picsum.photos/seed/default200/200/200'">
                     <div class="product-name">${product.name}</div>
                     <div class="product-rating">
@@ -946,12 +1409,81 @@
                         <span class="discount">${product.discount}% off</span>
                     </div>
                     <div class="product-offer"><i class="fas fa-tag"></i> Bank Offer Available</div>
-                    <button class="add-to-cart-btn" onclick="addToCart(${product.id})">
+                    <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(${product.id})">
                         <i class="fas fa-shopping-cart"></i> ADD TO CART
                     </button>
                 </div>
             `).join('');
         }
+
+        // Open product modal
+        function openProductModal(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            document.getElementById('modalProductImage').src = product.image;
+            document.getElementById('modalProductImage').alt = product.name;
+            document.getElementById('modalProductName').textContent = product.name;
+            document.getElementById('modalRating').textContent = product.rating;
+            document.getElementById('modalReviews').textContent = `(${product.reviews.toLocaleString()} Reviews)`;
+            document.getElementById('modalPrice').textContent = formatPrice(product.price);
+            document.getElementById('modalOriginalPrice').textContent = formatPrice(product.originalPrice);
+            document.getElementById('modalDiscount').textContent = `${product.discount}% off`;
+            document.getElementById('modalDescription').textContent = product.description;
+
+            // Build specifications table
+            const specTable = document.getElementById('specTable');
+            specTable.innerHTML = Object.entries(product.specifications).map(([key, value]) => `
+                <div class="spec-row">
+                    <span class="spec-label">${key}</span>
+                    <span class="spec-value">${value}</span>
+                </div>
+            `).join('');
+
+            // Build offers
+            document.getElementById('modalOffers').innerHTML = `
+                <div class="modal-offer-item"><i class="fas fa-check-circle"></i> Bank Offer: 10% off on first transaction</div>
+                <div class="modal-offer-item"><i class="fas fa-check-circle"></i> No cost EMI from ₹${Math.round(product.price / 6)}/month</div>
+                <div class="modal-offer-item"><i class="fas fa-check-circle"></i> Partner Offer: ₹100 off on ₹999+ order</div>
+            `;
+
+            document.getElementById('productModalOverlay').classList.add('active');
+            document.getElementById('productModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close product modal
+        function closeProductModal() {
+            document.getElementById('productModalOverlay').classList.remove('active');
+            document.getElementById('productModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Modal event listeners
+        document.getElementById('productModalOverlay').addEventListener('click', closeProductModal);
+        document.getElementById('modalClose').addEventListener('click', closeProductModal);
+
+        // Modal add to cart
+        document.getElementById('modalAddCart').addEventListener('click', () => {
+            const productName = document.getElementById('modalProductName').textContent;
+            const product = products.find(p => p.name === productName);
+            if (product) {
+                addToCart(product.id);
+                closeProductModal();
+            }
+        });
+
+        // Modal buy now
+        document.getElementById('modalBuyNow').addEventListener('click', () => {
+            const productName = document.getElementById('modalProductName').textContent;
+            const product = products.find(p => p.name === productName);
+            if (product) {
+                addToCart(product.id);
+                closeProductModal();
+                cartSidebar.classList.add('active');
+                cartOverlay.classList.add('active');
+            }
+        });
 
         // Add to cart
         function addToCart(productId) {
@@ -1084,6 +1616,11 @@
             );
             renderProducts(filteredProducts);
         });
+
+        // Filter by category (visual feedback only - shows toast)
+        function filterByCategory(category) {
+            showToast(`Browsing ${category}...`);
+        }
 
         // Initialize
         renderProducts();
